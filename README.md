@@ -1,6 +1,8 @@
 
-frontend = la racine
+frontend = la racine 
+
 backend = django
+
 src = React
     
 Pour lancer le projet:
