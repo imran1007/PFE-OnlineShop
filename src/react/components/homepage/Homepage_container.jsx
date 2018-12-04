@@ -13,7 +13,7 @@ class HomepageContainer extends Component {
 
   //get request to backend to get all products
   getAllproducts(params) {
-    sendApiRequest({ url: "http://127.0.0.1:8000/app1/" })
+    sendApiRequest({ url: "http://localhost:8000/app1/" })
       .then(products => {
         console.log(products);
         this.setState({
