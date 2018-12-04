@@ -1,7 +1,7 @@
 
-frontend (la racine)
-  backend (django)
-  src (React)
+frontend = la racine
+backend = django
+src = React
     
 Pour lancer le projet:
   1. Se deplacer dans la racine.
