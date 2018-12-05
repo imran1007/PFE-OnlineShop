@@ -1,11 +1,9 @@
-const path = require('path');
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
-const outputDirectory = 'dist';
-const projectRoot = path.resolve(__dirname, '..');
-
-
+const outputDirectory = "dist";
+const projectRoot = path.resolve(__dirname, "..");
 
 module.exports = {
   resolve: {
@@ -31,7 +29,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new CleanWebpackPlugin([outputDirectory]),
-  ]
+  plugins: [new CleanWebpackPlugin([outputDirectory])]
 };
