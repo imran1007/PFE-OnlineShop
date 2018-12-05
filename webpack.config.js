@@ -1,3 +1,12 @@
+const path = require('path');
+const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+const outputDirectory = 'dist';
+const projectRoot = path.resolve(__dirname, '..');
+
+
+
 module.exports = {
   resolve: {
     extensions: [".js", ".jsx", ".json"],
@@ -21,5 +30,8 @@ module.exports = {
         loader: "url-loader?limit=100000"
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin([outputDirectory]),
+  ]
 };
