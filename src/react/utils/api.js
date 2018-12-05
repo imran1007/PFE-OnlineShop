@@ -1,7 +1,7 @@
 function sendApiRequest({ url, method = "GET", params = null }) {
   const headers = new Headers();
-  //headers.append("Accept", "application/json");
-  //headers.append("Content-Type", "application/json");
+  headers.append("Accept", "application/json");
+  headers.append("Content-Type", "application/json");
 
   //headers.append("Access-Control-Allow-Origin", "*");
 

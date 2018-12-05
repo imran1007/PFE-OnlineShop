@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import InscriptionComponent from "./Inscription_component";
-
+import sendApiRequest from "../../utils/api";
 class InscriptionContainer extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +13,7 @@ class InscriptionContainer extends Component {
       last_name: ""
     };
 
-    this.authenticate = this.authenticate.bind(this);
+    this.signup = this.signup.bind(this);
     this.onFieldChange = this.onFieldChange.bind(this);
   }
   onFieldChange(event) {
@@ -22,13 +22,24 @@ class InscriptionContainer extends Component {
     });
   }
 
-  authenticate(e) {
-    //     const { login } = this.props;
-    //     const { email, password } = this.props;
-    //     e.preventDefault();
-    //     login({ email, password });
-    //
-    e.preventDefault();
+  signup(e) {
+    if (e) {
+      e.preventDefault();
+    }
+
+    const url = "http://localhost:8000/app1/inscription";
+    const params = this.state;
+    sendApiRequest({ url, method: "POST", params: params })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error(error);
+        this.setState({});
+      });
+  }
+  componentDidMount() {
+    this.signup();
   }
   render() {
     return (
@@ -38,11 +49,10 @@ class InscriptionContainer extends Component {
         first_name={this.state.first_name}
         last_name={this.state.last_name}
         password={this.state.password}
-        signup={this.authenticate}
+        signup={this.signup}
         onFieldChange={this.onFieldChange}
       />
     );
   }
 }
-
 export default InscriptionContainer;
