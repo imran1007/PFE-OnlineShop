@@ -11,4 +11,8 @@ Pour lancer le projet:
   3. npm run start pour demarrer le server front
   4. se deplacer dans le rep backend
   5. python manage.py runserver
+
+
+Changements: 
+  npm run eject = rajout de dossier config avec toutes les configurations, y compris webpack
   
