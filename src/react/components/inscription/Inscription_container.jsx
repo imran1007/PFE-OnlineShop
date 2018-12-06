@@ -27,7 +27,7 @@ class InscriptionContainer extends Component {
       e.preventDefault();
     }
 
-    const url = "http://localhost:8000/app1/inscription";
+    const url = "http://localhost:8000/app1/inscription/";
     const params = this.state;
     sendApiRequest({ url, method: "POST", params: params })
       .then(response => {
@@ -38,9 +38,7 @@ class InscriptionContainer extends Component {
         this.setState({});
       });
   }
-  componentDidMount() {
-    this.signup();
-  }
+  componentDidMount() {}
   render() {
     return (
       <InscriptionComponent
