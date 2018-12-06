@@ -29,7 +29,7 @@ class HomepageContainer extends Component {
   }
 
   componentDidMount() {
-    this.getAllproducts();
+    //this.getAllproducts();
   }
   render() {
     return <HomepageComponent products={this.state.products} />;
